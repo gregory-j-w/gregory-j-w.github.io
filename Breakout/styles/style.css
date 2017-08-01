@@ -1,60 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
-	width: 600px;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 100%;
+  background-color: rgb(133,133,133);
+}
+
+.title-container {
+  width: 100%;
+  height: 125px;
+  background-color: rgb(12,228,33);
+}
+
+.title {
+  text-transform: capitalize;
+  margin: 25px 0;
+  font-size: 100px;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+}
+
+.instructions-container {
+  flex: 1 1 auto;
+  min-width: 150px;
+  max-width: 200px;
+  height: 452px;
+
+}
+
+.header {
+  margin: 25px 0 0 0;
+  padding: 0;
+  text-decoration: underline;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  color: rgb(12,228,33);
+  text-align: center;
+  width: 100%;
+}
+
+.instructions {
+  text-align: center;
+  align-items: flex-start;
+}
+
+#instructions-p {
+  padding: 10px;
+  font-size: 16px;
+  font-family: Georgia;
+}
+
+.game {
+  flex: 0 0 auto;
+  align-self: center;
+  min-width: 600px;
 }
 
 .canvas {
-	display: flex;
-	width: 600px;
-	border: 1px solid black;
+  background-color: rgb(50,50,50);
 }
 
-#myCanvas
-#start {
-	margin: 0;
-	padding: 0;
-}
-
-h1 {
-	color: white;
-	text-align: center;
-	width: 600px;
-	border: 1px solid black;
-	margin: 0;
-	padding: 0;
-	background-color: rgb(40,40,40);
+.scoreboard-container {
+  flex: 1 1 auto;
+  align-self: auto;
+  min-width: 150px;
+  max-width: 200px;
+  height: 452px;
 }
 
 .scoreboard {
-	width: 600px;
-	border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
-.lives {
-	width: 250px;
-	float: left;
-	background-color: rgb(130,130,130);
+.points-container {
+  flex: 1 1 auto;
+  align-self: center;
 }
 
-img {
+#points-count {
+  text-align: center;
+  margin: 5px 0 0 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+  color: rgb(12,228,33);
+  text-align: center;
+  width: 100%;
+  height: 50px
+
+}
+
+.lives-container {
+  flex: 1 1 auto;
+  align-self: center;
+}
+
+.lives-header {
+  margin: 25px 0 0 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+}
+
+.lives-count img {
 	float: left;
-	height: 20px;
-	width: 20px;
-	margin: 5px 0 5px 0;
+	height: 40px;
+	width: 40px;
+	margin: 10px 0;
 	padding: 0;
-
 }
+
 #life1 {
-	margin: 5px 0px 5px 15px;
+  margin-left: 15px;
 }
 
-p {
-	width: 250px;
-	float: right;
+#start {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  text-aling: center;
+  margin: 12px 0 0 0;
 }
 
-#stop {
-	float: right;
-	clear: both;
-	background-color: white;
-	color: white;
+.start-container {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+
+  border: 1px solid #0f9b0f;
+  class="support css-property">-webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgb(90,190,87) 0, rgb(53,146,56) 100%), rgb(90, 190, 87);
+  box-shadow: 0 2px 1px 0 rgba(0,0,0,0.3) ;
+  text-shadow: 0 1px 2px rgb(50,114,40) ;
+}
+
+.start-container:hover {
+  color: rgba(90,190,87,1);
+  background: rgba(255,255,255,1);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.11) ;
+  transition: all 150ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.start-container:active {
+  border: 1px solid rgba(180,180,180,0.2);
+  color: rgb(255, 255, 255);
+  background: rgba(77,168,74,1);
+  box-shadow: 0 3px 0 0 rgba(0,0,0,0.1) inset;
+  transition: none;
+}
+
+.game-container, .canvas{
+  border: 1px solid black;
+
 }

@@ -2,7 +2,6 @@ var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
 
 //CANVAS_________
-//adjust to screen size but height = width, then the other elements adjust accordingly
 var canvasSize = {
   width: 600,
   height: 400
@@ -82,7 +81,7 @@ var ball = {
     ctx.beginPath();
     ctx.arc(ball.loc.x, ball.loc.y, ball.r, 0, Math.PI * 2, true);
     ctx.closePath();
-    ctx.fillStyle = 'rgb(170,10,10)';
+    ctx.fillStyle = 'rgb(200,200,200)';
     ctx.fill();
   },
   move: function() {
@@ -113,11 +112,11 @@ var ball = {
           ball.loc.x + ball.dir.x < paddle.loc.x + 33) {
             console.log("paddle left");
             //if ball.dir.x >= 3, dir = 3
-            if (paddle.dir.x > 0) {
-              paddle.dir.x = 3;
+            if (ball.dir.x > 0) {
+              ball.dir.x = 3;
             } //else if paddle.dir x < 0, dir = -3
-            else if (paddle.dir.x < 0) {
-              paddle.dir.x =-3;
+            else if (ball.dir.x < 0) {
+              ball.dir.x =-3;
             }
             console.log(ball.dir);
           }
@@ -126,12 +125,12 @@ var ball = {
         ball.loc.x + ball.dir.x < paddle.loc.x + 63) {
           console.log("paddle middle");
           //if ball.dir.x >= 3, dir = 3
-          if (paddle.dir.x >= 3) {
-            paddle.dir.x = paddle.dir.x - 2;
+          if (ball.dir.x >= 3) {
+            ball.dir.x = ball.dir.x - 2;
             console.log(-2);
           } //else if paddle.dir x < 0, dir = -3
-          else if (paddle.dir.x <= -3 ) {
-            paddle.dir.x = paddle.dir.x + 2;
+          else if (ball.dir.x <= -3 ) {
+            ball.dir.x = ball.dir.x + 2;
             console.log(+2);
           }
           console.log(ball.dir);
@@ -141,11 +140,11 @@ var ball = {
         ball.loc.x + ball.dir.x < paddle.loc.x + paddle.width) {
           console.log("paddle right");
           //if ball.dir.x >= 3, dir = 3
-          if (paddle.dir.x > 0) {
-            paddle.dir.x = 3;
+          if (ball.dir.x > 0) {
+            ball.dir.x = 3;
           } //else if paddle.dir x < 0, dir = -3
-          else if (paddle.dir.x < 0) {
-            paddle.dir.x =-3;
+          else if (ball.dir.x < 0) {
+            ball.dir.x =-3;
           }
           console.log(ball.dir);
         }
@@ -210,7 +209,7 @@ var brick = {
         ctx.beginPath();
         ctx.rect(brick.loc[i][0], brick.loc[i][1], brick.width, brick.height);
         ctx.closePath();
-        ctx.fillStyle = 'orange';
+        ctx.fillStyle = 'rgb(132,31,39)';
         ctx.fill();
       };
   },
@@ -256,7 +255,7 @@ function scoreboard() {
     document.getElementById('life3').setAttribute("src", "img/death.jpg");
   }
   scoreKeep();
-  document.getElementById('score').textContent = "Score: " + game.score;
+  document.getElementById('points-count').textContent = game.score;
 };
 //____________________________________________________
 
@@ -284,12 +283,6 @@ function start() {
 };
 start();
 
-function stop() {
-  document.getElementById('stop').onclick = function() {
-    ball.stopped = true;
-  }
-};
-stop();
 
 function animateCanvas() {
   ctx.clearRect(0, 0, canvasSize.width, canvasSize.height);

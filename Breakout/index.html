@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bouncing Ball</title>
+  <title>Breakout</title>
   <link rel='stylesheet' href = 'styles/style.css'></link>
-</head>
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 <body>
   <div class = "container">
-    <div class = "canvas">
-      <canvas id='myCanvas'></canvas>
+    <div class = "title-container">
+      <h1 class = "title">BREAKOUT</h1>
     </div>
-    <div id = "start">
-      <h1>S T A R T</h1>
-    </div>
-    <div id = "scoreboard">
-      <div id = "lives">
-        <img src = "img/life.jpg" id = "life1"></img>
-        <img src = "img/life.jpg" id = "life2"></img>
-        <img src = "img/life.jpg" id = "life3"></img>
-        <img src = "img/death.jpg" id = "life4"></img>
+    <div class = "game-container">
+      <div class = "instructions-container">
+        <div = class = "instructions">
+          <h3 class = "header">INSTRUCTIONS</h3>
+          <p class = "instructions-p">Click the "start" button at the bottom of the screen to begin the game.
+          Keep the ball from reaching the bottom of the screen by using the left or
+          right arrow keys to move the paddle. Score points by striking the bricks
+          with the ball. Clear all the bricks and win the game!</p>
+        </div>
       </div>
-      <div>
-        <p id = "score"></p>
+      <div class = "game">
+        <div class = "canvas">
+          <canvas id ='myCanvas'></canvas>
+        </div>
+        <div class = "start-container">
+          <div id = "start">start</div>
+        </div>
       </div>
-    </div>
-    <div id = "stop">
-      <h2>S T O P</h2>
+      <div class = "scoreboard-container">
+        <div class = "scoreboard"
+          <div class = "points-container">
+            <div class = "header">SCORE</div>
+            <div id = "points-count"></div>
+          </div>
+          <div class = "lives-container">
+            <div class = "header">LIVES</div>
+            <div class = "lives-count">
+              <img src = "img/life.jpg" id = "life1"></img>
+              <img src = "img/life.jpg" id = "life2"></img>
+              <img src = "img/life.jpg" id = "life3"></img>                <img src = "img/death.jpg" id = "life4"></img>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <script rel= 'javascript' src = 'js/safe.js'></script>
+<script rel= 'javascript' src = 'js/safe.js'></script>
 </body>
 </html>
